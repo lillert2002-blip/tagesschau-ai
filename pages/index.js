@@ -12,7 +12,7 @@ export default function Home() {
     setData('KI denkt nach... bitte ca. 60 Sekunden warten...');
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite-preview-02-05" });
+      const model = genAI.getGenerativeModel({ model: "model: "gemini-1.5-flash" });
       const prompt = "Analysiere das Tagesschau-Video vom 18.03.2026 von der Playlist https://www.youtube.com/playlist?list=PL4A2F331EE86DCC22. Erstelle ein wörtliches Transkript auf Deutsch, beschreibe das Studio visuell und fasse die Themen zusammen.";
       const result = await model.generateContent(prompt);
       setData(result.response.text());
